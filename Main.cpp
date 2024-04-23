@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include "GameControl.h"
-//#include <time.h>
 #include <memory>
 
 int main()
@@ -58,54 +57,3 @@ int main()
 	}
 	return 0;
 }
-/*
-using namespace sf;
-
-int main()
-{
-	RenderWindow app(VideoMode(500, 500), "Sandbox!");
-
-	Texture t1;
-	t1.loadFromFile("Files\\tiles.jpg");
-	
-	Sprite s(t1);
-
-	bool isMove{ false };
-	float dx{ 0 }, dy{ 0 };
-
-	while (app.isOpen())
-	{
-		Event e;
-
-		Vector2i pos{ Mouse::getPosition(app) };
-
-		while (app.pollEvent(e))
-		{
-			if (e.type == Event::Closed)
-				app.close();
-
-			if (e.type == Event::MouseButtonPressed)
-				if (e.key.code == Mouse::Left)
-					if (s.getGlobalBounds().contains(pos.x, pos.y))
-					{
-						isMove = true;
-						dx = pos.x - s.getPosition().x;
-						dy = pos.y - s.getPosition().y;
-					}
-
-			if (e.type == Event::MouseButtonReleased)
-				if (e.key.code == Mouse::Left)
-					isMove = false;
-		}
-
-		if (isMove)
-			s.setPosition(pos.x - dx, pos.y - dy);
-
-		// draw
-		app.clear();
-		app.draw(s);
-		app.display();
-	}
-
-	return 0;
-}*/
